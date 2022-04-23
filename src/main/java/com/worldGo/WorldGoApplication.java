@@ -12,7 +12,6 @@ import java.util.List;
 public class WorldGoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(WorldGoApplication.class, args);
 		FlightService service;
 		AbstractApplicationContext context = (AbstractApplicationContext) SpringApplication.run(WorldGoApplication.class,
 				args);
