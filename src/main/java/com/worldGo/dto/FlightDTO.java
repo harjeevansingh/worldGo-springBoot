@@ -2,10 +2,10 @@ package com.worldGo.dto;
 
 //import java.time.LocalDate;
 
-import org.springframework.context.annotation.Bean;
+import com.worldGo.entities.Flight;
 
 public class FlightDTO {
-    private int flightId;
+    private Integer flightId;
     private String airlines;
     private String source;
     private String destination;
@@ -14,7 +14,7 @@ public class FlightDTO {
     private Integer seatCount;
 
     //    public FlightDTO(String flightId, String airlines, String source, String destination, Double fare, LocalDate journeyDate, Integer seatCount) {
-    public FlightDTO(int flightId, String airlines, String source, String destination, Double fare, Integer seatCount) {
+    public FlightDTO(Integer flightId, String airlines, String source, String destination, Double fare, Integer seatCount) {
         this.flightId = flightId;
         this.airlines = airlines;
         this.source = source;
@@ -85,5 +85,10 @@ public class FlightDTO {
 //    public void setJourneyDate(LocalDate journeyDate){
 //        this.journeyDate = journeyDate;
 //    }
+
+    public static Flight prepareFlightEntity(FlightDTO flightDTO) {
+        return new Flight(flightDTO.getFlightId(), flightDTO.getAirlines(), flightDTO.getSource(),
+                flightDTO.getDestination(), flightDTO.getFare(), flightDTO.getSeatCount());
+    }
 
 }
