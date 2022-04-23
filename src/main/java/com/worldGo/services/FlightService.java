@@ -22,7 +22,7 @@ public class FlightService {
     public String addFlight(FlightDTO flight) {
 //        flightDAO.createFlight(flight);
         flightRepository.saveAndFlush(FlightDTO.prepareFlightEntity(flight));
-        return "Customer with to " + flight.getDestination() + " is added successfully";
+        return "Details for your flight to " + flight.getDestination() + " is added successfully";
     }
 
     public List<FlightDTO> fetchFlights(){
